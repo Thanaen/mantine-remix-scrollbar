@@ -1,0 +1,6 @@
+{
+  "view": "browser",
+  "port": 3000,
+  "node": 14,
+  "startScript": "build-and-start"
+}

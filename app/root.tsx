@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -9,6 +9,7 @@ import {
 } from "@remix-run/react";
 import { createEmotionCache, MantineProvider } from "@mantine/core";
 import { StylesPlaceholder } from "@mantine/remix";
+import scrollAreaCss from "./styles/scrollAreaStyles.css";
 import { theme } from "./theme";
 
 export const meta: MetaFunction = () => ({
@@ -16,6 +17,10 @@ export const meta: MetaFunction = () => ({
   title: "New Remix App",
   viewport: "width=device-width,initial-scale=1",
 });
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: scrollAreaCss },
+];
 
 createEmotionCache({ key: "mantine" });
 
